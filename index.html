@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uzależnienie – cicha cena sukcesu | Uzależnienia wysokofunkcjonujące</title>
+  <meta name="description" content="Kompleksowy przegląd zjawiska uzależnień wysokofunkcjonujących wśród liderów, prawników i przedsiębiorców – mechanizmy, skutki, droga do zdrowienia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0B1220;
+      --bg-card-light: rgba(248, 250, 252, 0.96);
+      --bg-card-dark: rgba(15, 23, 42, 0.75);
+      --accent-indigo: #4F46E5;
+      --accent-mint: #10B981;
+      --accent-ivory: #F8FAFC;
+      --text-primary: #0F172A;
+      --text-muted: rgba(15, 23, 42, 0.75);
+      --shadow-soft: 0 24px 48px rgba(15, 23, 42, 0.25);
+      --radius-card: 20px;
+      --transition-base: 280ms ease;
+      color-scheme: light dark;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-primary: #070b16;
+        --bg-card-light: rgba(15, 23, 42, 0.88);
+        --bg-card-dark: rgba(11, 18, 32, 0.88);
+        --accent-ivory: rgba(248, 250, 252, 0.12);
+        --text-primary: #E2E8F0;
+        --text-muted: rgba(226, 232, 240, 0.72);
+        --shadow-soft: 0 28px 56px rgba(4, 7, 13, 0.7);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(180deg, var(--bg-primary) 0%, #111a30 100%);
+      color: var(--text-primary);
+      line-height: 1.7;
+      position: relative;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--accent-mint);
+      outline-offset: 4px;
+    }
+
+    header {
+      background: rgba(11, 18, 32, 0.92);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      color: #E2E8F0;
+      letter-spacing: 0.04em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.25rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: rgba(226, 232, 240, 0.85);
+      position: relative;
+      padding-bottom: 0.25rem;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent-indigo), var(--accent-mint));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition-base);
+    }
+
+    nav a:hover::after,
+    nav a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 2rem 4rem;
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      align-items: center;
+    }
+
+    .hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 4vw, 3.2rem);
+      letter-spacing: -0.01em;
+      color: #F8FAFC;
+      margin-bottom: 1.25rem;
+      text-shadow: 0 18px 32px rgba(15, 23, 42, 0.35);
+    }
+
+    .hero-content p {
+      font-size: 1.1rem;
+      max-width: 640px;
+      color: rgba(226, 232, 240, 0.82);
+      margin-bottom: 2rem;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, var(--accent-indigo), var(--accent-mint));
+      border: none;
+      color: #F8FAFC;
+      padding: 0.85rem 1.75rem;
+      border-radius: 999px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+      box-shadow: 0 18px 32px rgba(79, 70, 229, 0.35);
+    }
+
+    .cta-button svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 28px 48px rgba(16, 185, 129, 0.35);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 280px;
+    }
+
+    .hero-visual::before,
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      border-radius: 40% 60% 50% 50% / 60% 40% 50% 40%;
+      background: radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.45), transparent 60%),
+                  radial-gradient(circle at 70% 60%, rgba(16, 185, 129, 0.4), transparent 65%);
+      inset: 0;
+      filter: blur(0px);
+      opacity: 0.9;
+    }
+
+    .hero-visual::after {
+      inset: 40px;
+      background: radial-gradient(circle at 30% 30%, rgba(248, 250, 252, 0.22), transparent 50%),
+                  radial-gradient(circle at 60% 70%, rgba(79, 70, 229, 0.35), transparent 60%);
+      mix-blend-mode: screen;
+    }
+
+    main {
+      padding: 2rem 1rem 6rem;
+    }
+
+    .card {
+      max-width: 1100px;
+      margin: 0 auto 4rem;
+      background: var(--bg-card-light);
+      color: var(--text-primary);
+      border-radius: var(--radius-card);
+      padding: clamp(2.5rem, 3vw, 3.5rem);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      backdrop-filter: blur(12px);
+      display: grid;
+      gap: 2.5rem;
+      transition: transform var(--transition-base), box-shadow var(--transition-base);
+    }
+
+    .card:nth-of-type(even) {
+      background: linear-gradient(135deg, rgba(248, 250, 252, 0.96), rgba(148, 163, 184, 0.08));
+    }
+
+    .card:nth-of-type(odd) {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.08), rgba(248, 250, 252, 0.96));
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 56px rgba(15, 23, 42, 0.35);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .card-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(79, 70, 229, 0.2), rgba(16, 185, 129, 0.2));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2rem);
+      letter-spacing: 0.01em;
+    }
+
+    .card-lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 720px;
+    }
+
+    .card-content {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+      margin: 0;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .card blockquote {
+      margin: 0;
+      padding: 1.25rem 1.5rem;
+      background: rgba(79, 70, 229, 0.08);
+      border-left: 4px solid var(--accent-indigo);
+      border-radius: 12px;
+      font-style: italic;
+      color: var(--text-primary);
+    }
+
+    .card blockquote strong {
+      font-weight: 600;
+    }
+
+    .card table {
+      width: 100%;
+      border-collapse: collapse;
+      background: rgba(248, 250, 252, 0.82);
+      border-radius: 16px;
+      overflow: hidden;
+      font-size: 0.95rem;
+    }
+
+    .card th,
+    .card td {
+      padding: 1rem 1.1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .card th {
+      background: rgba(79, 70, 229, 0.12);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .card tr:last-of-type td {
+      border-bottom: none;
+    }
+
+    .decor {
+      position: absolute;
+      inset: auto -120px -120px auto;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle at 30% 30%, rgba(79, 70, 229, 0.18), transparent 60%),
+                  radial-gradient(circle at 70% 70%, rgba(16, 185, 129, 0.18), transparent 70%);
+      border-radius: 46% 54% 42% 58% / 60% 46% 54% 40%;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .decor.alt {
+      inset: -120px auto auto -120px;
+      background: radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.2), transparent 70%),
+                  radial-gradient(circle at 60% 60%, rgba(79, 70, 229, 0.2), transparent 65%);
+    }
+
+    .card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-progress {
+      position: absolute;
+      left: 1.5rem;
+      top: 1.5rem;
+      bottom: 1.5rem;
+      width: 4px;
+      border-radius: 999px;
+      background: rgba(79, 70, 229, 0.1);
+      overflow: hidden;
+    }
+
+    .card-progress::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent-indigo), var(--accent-mint));
+      transform-origin: bottom;
+      transform: scaleY(var(--progress, 0));
+      transition: transform 400ms ease;
+    }
+
+    .card:hover .card-progress::after {
+      transform: scaleY(1);
+    }
+
+    .card-body {
+      margin-left: 2.5rem;
+      display: grid;
+      gap: 1.75rem;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: rgba(15, 23, 42, 0.05);
+      padding: 1rem 1.25rem;
+      border-radius: 12px;
+    }
+
+    footer {
+      background: rgba(11, 18, 32, 0.95);
+      color: rgba(226, 232, 240, 0.78);
+      padding: 3rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(79, 70, 229, 0.95);
+      color: #F8FAFC;
+      border: none;
+      border-radius: 999px;
+      width: 52px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 22px 40px rgba(79, 70, 229, 0.35);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition-base), transform var(--transition-base);
+      z-index: 1200;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    @media (max-width: 900px) {
+      nav ul {
+        gap: 0.75rem;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        padding: 2.25rem;
+      }
+
+      .card-progress {
+        left: 1rem;
+      }
+
+      .card-body {
+        margin-left: 2rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+      }
+
+      .hero {
+        padding-top: 5rem;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2.3rem, 9vw, 3rem);
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+
+      .card {
+        padding: 2rem 1.75rem;
+        margin-bottom: 3rem;
+      }
+
+      .card-progress {
+        display: none;
+      }
+
+      .card-body {
+        margin-left: 0;
+      }
+
+      .back-to-top {
+        right: 1.25rem;
+        bottom: 1.5rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Uzależnienia wysokofunkcjonujące – cicha cena sukcesu",
+    "description": "Analiza uzależnień wysokofunkcjonujących wśród liderów i osób sukcesu: mechanizmy, skutki, droga do zdrowienia.",
+    "author": {
+      "@type": "Organization",
+      "name": "Uzależnienie – cicha cena sukcesu"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Uzależnienie – cicha cena sukcesu"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://przyklad.pl/uzaleznienia-wysokofunkcjonujace"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Sticky Navigation -->
+  <header>
+    <div class="nav-container" aria-label="Główna nawigacja">
+      <div class="logo">Uzależnienie – cicha cena sukcesu</div>
+      <nav>
+        <ul>
+          <li><a href="#sekcja-1">01</a></li>
+          <li><a href="#sekcja-2">02</a></li>
+          <li><a href="#sekcja-3">03</a></li>
+          <li><a href="#sekcja-4">04</a></li>
+          <li><a href="#sekcja-5">05</a></li>
+          <li><a href="#sekcja-6">06</a></li>
+          <li><a href="#sekcja-7">07</a></li>
+          <li><a href="#sekcja-8">08</a></li>
+          <li><a href="#sekcja-9">09</a></li>
+          <li><a href="mailto:kontakt@cichacenasukcesu.pl">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="start">
+    <div class="hero-content">
+      <h1>Uzależnienia wysokofunkcjonujące – cicha cena sukcesu wśród przedsiębiorców, prawników i liderów</h1>
+      <p>Pod powierzchnią spektakularnych sukcesów często kryje się chroniczny stres, samotność i kompulsje regulowane substancjami lub zachowaniami. Przyjrzyjmy się mechanizmom, które sprawiają, że osoby na szczycie często najdłużej pozostają niezauważone.</p>
+      <button class="cta-button" type="button" data-scroll-to="#sekcja-1">
+        <span>Czytaj od początku</span>
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    </div>
+    <div class="hero-visual" role="presentation" aria-hidden="true"></div>
+  </section>
+
+  <main>
+    <!-- Section 1 -->
+    <article class="card" id="sekcja-1">
+      <div class="card-progress"></div>
+      <div class="decor" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+              <path d="M4 16c0-6.627 5.373-12 12-12s12 5.373 12 12-5.373 12-12 12S4 22.627 4 16Z" stroke="url(#grad1)" stroke-width="2"></path>
+              <path d="M16 8v8l5 5" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <defs>
+                <linearGradient id="grad1" x1="8" y1="8" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4F46E5" />
+                  <stop offset="1" stop-color="#10B981" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h2 class="card-title">01. Wprowadzenie: Kontekst zjawiska</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-lead">Uzależnienie wysokofunkcjonujące wymyka się stereotypom – dotyczy ludzi, którzy na zewnątrz odnoszą sukcesy, a mimo to w milczeniu zmagają się z destrukcyjnym przymusem.</p>
+          <div class="card-content">
+            <ul>
+              <li>Czym jest uzależnienie wysokofunkcjonujące (definicja kliniczna i psychologiczna).</li>
+              <li>Różnice vs „klasyczne” uzależnienie.</li>
+              <li>Mit „silnej woli” i „pełnej kontroli”.</li>
+            </ul>
+            <p>Dlaczego dotyczy ludzi sukcesu: stres, presja, odpowiedzialność i rywalizacja; społeczne przyzwolenie („kieliszek po pracy to norma”); kultura „hustle”, produktywności, perfekcjonizmu.</p>
+            <blockquote>„Czy naprawdę trzeba sięgnąć dna, żeby uznać, że jest problem, skoro z zewnątrz wszystko działa?”</blockquote>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 2 -->
+    <article class="card" id="sekcja-2">
+      <div class="card-progress"></div>
+      <div class="decor alt" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+              <path d="M16 6c-4.418 0-8 3.582-8 8 0 7 8 12 8 12s8-5 8-12c0-4.418-3.582-8-8-8Z" stroke="url(#grad2)" stroke-width="2"></path>
+              <circle cx="16" cy="14" r="3" stroke="url(#grad2)" stroke-width="2"></circle>
+              <defs>
+                <linearGradient id="grad2" x1="8" y1="6" x2="24" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#10B981" />
+                  <stop offset="1" stop-color="#4F46E5" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h2 class="card-title">02. Mechanizmy psychologiczne uzależnień wysokofunkcjonujących</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-lead">Wysoka funkcjonalność bywa maską. Psychika nagina realność, by zachować spójność z obrazem „silnej osoby”.</p>
+          <div class="card-content">
+            <p>Perfekcjonizm i napięcie; uzależnienie jako regulator emocji; dysonans poznawczy „Nie mogę być uzależniony, bo odnoszę sukcesy”; podwójne życie, maskowanie, wstyd.</p>
+            <blockquote>„Pracowałem po 12 godzin dziennie… Dopiero gdy nagroda stała się koniecznością, coś pękło.”</blockquote>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 3 -->
+    <article class="card" id="sekcja-3">
+      <div class="card-progress"></div>
+      <div class="decor" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+              <rect x="6" y="10" width="20" height="12" rx="4" stroke="url(#grad3)" stroke-width="2" fill="none"></rect>
+              <path d="M12 16h8" stroke="url(#grad3)" stroke-width="2" stroke-linecap="round"></path>
+              <defs>
+                <linearGradient id="grad3" x1="6" y1="10" x2="26" y2="22" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4F46E5" />
+                  <stop offset="1" stop-color="#10B981" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h2 class="card-title">03. Substancje i wzorce – kto po co sięga?</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-lead">Różne profesje sięgają po odmienne strategie, ale wspólnym mianownikiem jest ulga i podtrzymanie tempa.</p>
+          <div class="card-content">
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Grupa zawodowa</th>
+                    <th>Najczęstsze substancje/zachowania</th>
+                    <th>Motyw/potrzeba psychiczna</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Przedsiębiorcy, start-upowcy</td>
+                    <td>Amfetamina, kokaina, mikrodozowanie LSD, alkohol, praca kompulsywna</td>
+                    <td>Wydajność, kreatywność, brak snu, presja innowacji</td>
+                  </tr>
+                  <tr>
+                    <td>Prawnicy, finansiści, menedżerowie</td>
+                    <td>Alkohol, benzodiazepiny, stymulanty</td>
+                    <td>Regulacja stresu, perfekcjonizm, napięcie</td>
+                  </tr>
+                  <tr>
+                    <td>Lekarze, ratownicy, osoby pomagające</td>
+                    <td>Leki przeciwbólowe, alkohol</td>
+                    <td>Wypalenie empatyczne, trauma wtórna</td>
+                  </tr>
+                  <tr>
+                    <td>Artyści, twórcy, influencerzy</td>
+                    <td>Substancje psychoaktywne, media społecznościowe</td>
+                    <td>Emocje, uznanie, lęk przed przeciętnością</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="note">Notka: przykłady publicznych historii – Anthony Bourdain, Robert Downey Jr., Demi Lovato, Jordan Belfort.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 4 -->
+    <article class="card" id="sekcja-4">
+      <div class="card-progress"></div>
+      <div class="decor alt" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+              <path d="M8 10c0-3.314 2.686-6 6-6h4c3.314 0 6 2.686 6 6v4h1a3 3 0 0 1 0 6h-1v2c0 3.314-2.686 6-6 6h-4c-3.314 0-6-2.686-6-6v-2H7a3 3 0 0 1 0-6h1v-4Z" stroke="url(#grad4)" stroke-width="2" stroke-linejoin="round"></path>
+              <defs>
+                <linearGradient id="grad4" x1="8" y1="4" x2="24" y2="28" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#10B981" />
+                  <stop offset="1" stop-color="#4F46E5" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h2 class="card-title">04. Psychologia sukcesu i samotności</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-lead">Sukces bywa zbroją, która chroni przed krytyką, ale też izoluje, wzmacniając potrzebę kompulsywnego działania.</p>
+          <div class="card-content">
+            <p>„Sukces jako zbroja”, samotność lidera, deficyty regulacji emocji w dzieciństwie → kompulsja działania.</p>
+            <blockquote>„Na zewnątrz wyglądałem jak człowiek, który wygrał życie…”</blockquote>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 5 -->
+    <article class="card" id="sekcja-5">
+      <div class="card-progress"></div>
+      <div class="decor" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+              <path d="M6 10c0-1.657 1.343-3 3-3h14c1.657 0 3 1.343 3 3v12c0 1.657-1.343 3-3 3H9c-1.657 0-3-1.343-3-3V10Z" stroke="url(#grad5)" stroke-width="2"></path>
+              <path d="m11 14 4 4 6-6" stroke="url(#grad5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <defs>
+                <linearGradient id="grad5" x1="6" y1="7" x2="26" y2="25" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4F46E5" />
+                  <stop offset="1" stop-color="#10B981" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h2 class="card-title">05. Społeczny i kulturowy wymiar zjawiska</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-lead">Normy kulturowe i środowisko zawodowe wspierają iluzję, że kontrola jest wciąż w rękach osoby uzależnionej.</p>
+          <div class="card-content">
+            <p>Normalizacja alkoholu/leków, kultura „radzenia sobie samemu”, rola social mediów, system nagradzający tempo pracy.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 6 -->
+    <article class="card" id="sekcja-6">
+      <div class="card-progress"></div>
+      <div class="decor alt" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+              <path d="M16 4c-4.418 0-8 3.582-8 8v3H6l2 12h16l2-12h-2v-3c0-4.418-3.582-8-8-8Z" stroke="url(#grad6)" stroke-width="2" stroke-linejoin="round"></path>
+              <path d="M16 18v-6" stroke="url(#grad6)" stroke-width="2" stroke-linecap="round"></path>
+              <defs>
+                <linearGradient id="grad6" x1="8" y1="4" x2="24" y2="28" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#10B981" />
+                  <stop offset="1" stop-color="#4F46E5" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h2 class="card-title">06. Skutki psychiczne i fizyczne</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-lead">Uzależnienia wysokofunkcjonujące mają wysoką cenę: od wypalenia po degradację układu nerwowego.</p>
+          <div class="card-content">
+            <p>Wypalenie, derealizacja, depresja; relacje: niedostępność, izolacja; somatyka: bezsenność, serce, układ nerwowy; degradacja układu nagrody.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 7 -->
+    <article class="card" id="sekcja-7">
+      <div class="card-progress"></div>
+      <div class="decor" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+              <path d="M6 16c0-5.523 4.477-10 10-10s10 4.477 10 10-4.477 10-10 10-10-4.477-10-10Z" stroke="url(#grad7)" stroke-width="2"></path>
+              <path d="m12 17 3 3 5-5" stroke="url(#grad7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <defs>
+                <linearGradient id="grad7" x1="6" y1="6" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4F46E5" />
+                  <stop offset="1" stop-color="#10B981" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h2 class="card-title">07. Droga do zdrowienia</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-lead">Wyzdrowienie wymaga uznania problemu i budowy nowych narzędzi regulacji emocji, a także tożsamości poza wynikiem.</p>
+          <div class="card-content">
+            <p>Rozpoznanie problemu; psychoterapia, grupy wsparcia, leczenie; budowa nowej tożsamości; nauka odpoczynku i regulacji bez substancji.</p>
+            <blockquote>„Nie chodzi o to, by przestać pić…”</blockquote>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 8 -->
+    <article class="card" id="sekcja-8">
+      <div class="card-progress"></div>
+      <div class="decor alt" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+              <path d="M16 6c-4.971 0-9 4.029-9 9 0 3.346 1.828 6.418 4.735 8.074L16 27l4.265-3.926C23.172 21.418 25 18.346 25 15c0-4.971-4.029-9-9-9Z" stroke="url(#grad8)" stroke-width="2" stroke-linejoin="round"></path>
+              <path d="M13 14h6l-3 5" stroke="url(#grad8)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              <defs>
+                <linearGradient id="grad8" x1="7" y1="6" x2="25" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#10B981" />
+                  <stop offset="1" stop-color="#4F46E5" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h2 class="card-title">08. Wnioski i przesłanie</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-lead">Bez redefinicji sukcesu i odpoczynku „choroba sukcesu” będzie eskalować w kulturze ciągłego wzrostu.</p>
+          <div class="card-content">
+            <p>„Choroba sukcesu” w kulturze bez odpoczynku; redefinicja sukcesu; odwaga jako siła.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Section 9 -->
+    <article class="card" id="sekcja-9">
+      <div class="card-progress"></div>
+      <div class="decor" aria-hidden="true"></div>
+      <div class="card-inner">
+        <div class="card-header">
+          <span class="card-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" width="28" height="28">
+              <path d="M8 9c0-1.657 1.343-3 3-3h10c1.657 0 3 1.343 3 3v14c0 1.657-1.343 3-3 3H11c-1.657 0-3-1.343-3-3V9Z" stroke="url(#grad9)" stroke-width="2"></path>
+              <path d="M12 13h8" stroke="url(#grad9)" stroke-width="2" stroke-linecap="round"></path>
+              <path d="M12 18h8" stroke="url(#grad9)" stroke-width="2" stroke-linecap="round"></path>
+              <defs>
+                <linearGradient id="grad9" x1="8" y1="6" x2="24" y2="26" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#4F46E5" />
+                  <stop offset="1" stop-color="#10B981" />
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <h2 class="card-title">09. Możliwe rozszerzenia / moduły</h2>
+        </div>
+        <div class="card-body">
+          <p class="card-lead">Zjawisko można zgłębiać poprzez dodatkowe materiały, narracje i porównania danych.</p>
+          <div class="card-content">
+            <p>Case study „dzień z życia prawnika z FAS”; mini-wywiady; porównanie statystyk między zawodami.</p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <p>© 2024 Uzależnienie – cicha cena sukcesu. Wszelkie prawa zastrzeżone.</p>
+      <div class="footer-nav">
+        <a href="#start">Start</a>
+        <a href="#sekcja-1">Sekcje</a>
+        <a href="mailto:kontakt@cichacenasukcesu.pl">Kontakt</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" type="button" aria-label="Powrót na górę strony">
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 19V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+      <path d="M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+
+  <script>
+    // Smooth scroll for CTA button
+    document.querySelectorAll('[data-scroll-to]').forEach(btn => {
+      btn.addEventListener('click', event => {
+        const target = document.querySelector(btn.dataset.scrollTo);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // Intersection Observer for fade-in and progress
+    const cards = document.querySelectorAll('.card');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+        const progress = Math.min(Math.max(entry.intersectionRatio, 0), 1);
+        entry.target.style.setProperty('--progress', progress.toFixed(2));
+      });
+    }, {
+      threshold: Array.from({ length: 11 }, (_, i) => i / 10)
+    });
+
+    cards.forEach(card => {
+      observer.observe(card);
+    });
+
+    // Back to top button logic
+    const backToTop = document.querySelector('.back-to-top');
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    const toggleBackToTop = () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.add('visible');
+      } else {
+        backToTop.classList.remove('visible');
+      }
+    };
+
+    document.addEventListener('scroll', toggleBackToTop, { passive: true });
+
+    // Animation on load
+    const animateObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          animateObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(24px)';
+      card.style.transition = 'opacity 600ms ease, transform 600ms ease';
+      animateObserver.observe(card);
+    });
+  </script>
+</body>
+</html>
